@@ -63,6 +63,21 @@ const coastSegments = [
 const pentimentoPath =
   "M 66 372 C 146 356, 200 366, 262 346 C 312 330, 344 328, 392 342 C 446 354, 476 336, 512 320 C 546 305, 552 276, 576 268 C 598 262, 606 306, 634 328 C 668 350, 710 340, 748 352 C 812 368, 858 344, 916 330 C 978 315, 1042 332, 1104 306 C 1128 296, 1146 304, 1162 296";
 
+// A second, lighter redraw — the "third pass" a hand makes when it isn't
+// satisfied with the first correction. Different jitter than the pentimento
+// so the two never sit in perfect parallel (which is what makes filtered
+// duplicates read as computed rather than drawn).
+const secondPassPath =
+  "M 58 360 C 132 344, 190 354, 250 332 C 300 318, 336 316, 384 330 C 436 344, 468 328, 504 314 C 534 300, 544 266, 568 256 C 588 250, 598 296, 624 316 C 656 338, 700 328, 736 340 C 800 356, 848 332, 906 320 C 968 306, 1030 322, 1092 296 C 1116 286, 1134 294, 1150 286";
+
+// Two hand-set survey marks, placed where the coast actually folds near each
+// city's real geography — Ajman's mark sits at the tidal-creek inlet, not at
+// an arbitrary midpoint.
+const marks = [
+  { x: 214, y: 350, rotate: -2.5, label: "Sharjah" },
+  { x: 588, y: 268, rotate: 1.8, label: "Ajman" },
+];
+
 export function ServiceAreas() {
   const reduceMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
@@ -110,6 +125,15 @@ export function ServiceAreas() {
     },
   };
 
+  const markVariants: Variants = {
+    hidden: { opacity: 0, scale: reduceMotion ? 1 : 0.6 },
+    visible: {
+      opacity: 0.5,
+      scale: 1,
+      transition: { duration: reduceMotion ? 0 : 0.5, ease, delay: reduceMotion ? 0 : 2 },
+    },
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -152,6 +176,20 @@ export function ServiceAreas() {
             </filter>
           </defs>
 
+          {/* second pass — the faintest of the three, corrected differently
+              than the pentimento so the passes never sit in parallel */}
+          <motion.path
+            variants={pentimentoVariants}
+            d={secondPassPath}
+            transform="translate(-5 5) rotate(0.4 600 300)"
+            stroke="var(--brass)"
+            strokeWidth={0.9}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+            opacity={0.08}
+          />
+
           {/* pentimento — the redrawn-once pass, sitting behind, offset */}
           <motion.path
             variants={pentimentoVariants}
@@ -179,6 +217,47 @@ export function ServiceAreas() {
               />
             ))}
           </g>
+
+          {/* survey marks — a cartographer's hand noting two real places on
+              the line, not decoration floating free of the content */}
+          {marks.map((mark) => (
+            <motion.g
+              key={mark.label}
+              variants={markVariants}
+              style={{ x: mark.x, y: mark.y, rotate: mark.rotate }}
+            >
+              <line
+                x1={-7}
+                y1={0}
+                x2={7}
+                y2={0}
+                stroke="var(--brass)"
+                strokeWidth={1.2}
+                strokeLinecap="round"
+              />
+              <line
+                x1={0}
+                y1={-7}
+                x2={0}
+                y2={7}
+                stroke="var(--brass)"
+                strokeWidth={1.2}
+                strokeLinecap="round"
+              />
+              <circle r={2.3} fill="var(--brass)" />
+              <text
+                x={11}
+                y={-9}
+                fontFamily="var(--font-serif)"
+                fontStyle="italic"
+                fontSize={16}
+                fill="var(--brass)"
+                letterSpacing="0.02em"
+              >
+                {mark.label}
+              </text>
+            </motion.g>
+          ))}
         </svg>
       </motion.div>
 
