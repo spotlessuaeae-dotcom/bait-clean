@@ -2,6 +2,9 @@ import { SmoothScroll } from "@/components/smooth-scroll";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { ServicesOverview } from "@/components/services-overview";
+import { HowItWorks } from "@/components/how-it-works";
+import { TheStandard } from "@/components/the-standard";
+import { ServiceAreas } from "@/components/service-areas";
 
 export default function Home() {
   return (
@@ -11,6 +14,9 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <ServicesOverview />
+        <HowItWorks />
+        <TheStandard />
+        <ServiceAreas />
       </main>
     </>
   );
