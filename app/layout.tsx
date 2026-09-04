@@ -2,6 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { SmoothScroll } from "@/components/smooth-scroll";
+
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
@@ -48,7 +52,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${fraunces.variable} ${instrumentSans.variable} h-full antialiased bg-background`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <SmoothScroll />
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
