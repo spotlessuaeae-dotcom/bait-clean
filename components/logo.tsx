@@ -42,7 +42,7 @@ export function Logo({ className, markOnly = false, label = "Bait Clean — home
       </svg>
 
       {!markOnly && (
-        <span className="font-serif text-xl font-medium leading-none tracking-[0.14em] text-foreground">
+        <span className="font-serif text-xl font-medium leading-none tracking-[0.14em] text-current">
           <span>BAIT</span>
           <span className="mx-1.5 align-middle text-brass" aria-hidden="true">
             ·
