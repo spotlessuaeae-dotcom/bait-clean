@@ -5,6 +5,7 @@ import { ServicesOverview } from "@/components/services-overview";
 import { HowItWorks } from "@/components/how-it-works";
 import { TheStandard } from "@/components/the-standard";
 import { ServiceAreas } from "@/components/service-areas";
+import { FAQ } from "@/components/faq";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <HowItWorks />
         <TheStandard />
         <ServiceAreas />
+        <FAQ />
       </main>
     </>
   );
