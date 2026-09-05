@@ -37,7 +37,7 @@ export function ServicesHero() {
       className="relative overflow-hidden border-b border-border/70 bg-background"
       aria-labelledby="services-hero-heading"
     >
-      <div className="mx-auto w-full max-w-7xl px-5 pt-28 pb-16 sm:px-8 sm:pt-32 lg:grid lg:grid-cols-12 lg:gap-x-8 lg:pt-40 lg:pb-24">
+      <div className="mx-auto w-full max-w-7xl px-5 pt-14 pb-16 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-8 lg:pt-20 lg:pb-24">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -91,13 +91,21 @@ export function ServicesHero() {
         >
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-muted">
             <Image
-              src="/services-anchor-tools.png"
+              src="/services-hero-team.png"
+              alt="Three professional cleaners actively vacuuming, wiping windows, and scrubbing a kitchen countertop in a bright modern home."
+              fill
+              sizes="(min-width: 1024px) 42vw, 100vw"
+              priority
+              className="scale-125 object-cover object-bottom"
+            />
+            {/* <Image
+              src="/services-hero-team.png"
               alt="A caddy of cleaning tools — cloths, spray bottles, and brushes — arranged on a counter, ready to work."
               fill
               sizes="(min-width: 1024px) 42vw, 100vw"
               priority
               className="object-cover"
-            />
+            /> */}
           </div>
         </motion.div>
       </div>
