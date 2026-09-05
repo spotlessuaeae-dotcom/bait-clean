@@ -114,7 +114,7 @@ export function Hero() {
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl sm:aspect-[5/4] lg:aspect-[4/5]">
             <Image
               src="/hero-interior.png"
-              alt="A hand smoothing a crisp linen bedsheet taut in soft morning light — the quiet craft behind every Bait Clean visit."
+              alt="A professional cleaner in a blue uniform and yellow gloves smoothing crisp white bedsheets in a sunlit bedroom."
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 48vw"

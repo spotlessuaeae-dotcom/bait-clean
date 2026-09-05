@@ -21,24 +21,24 @@ type Figure = {
 
 const anchor: Figure = {
   src: "/standard-linen.png",
-  alt: "A pressed, folded edge of white linen caught in raking daylight, threads and crease sharp in close view.",
+  alt: "Yellow-gloved hands folding freshly pressed white linen in soft daylight.",
 };
 
 const windowTrack: Figure = {
   src: "/standard-window.png",
-  alt: "A streak-free window track and glass edge, a single line of light along the clean channel.",
+  alt: "A professional cleaner wiping a bright window track clean.",
   caption: "Window tracks.",
 };
 
 const grout: Figure = {
   src: "/standard-grout.png",
-  alt: "Restored grout lines running clean and even between pale tiles.",
+  alt: "A yellow-gloved cleaner scrubbing pale bathroom tile grout.",
   caption: "Grout lines.",
 };
 
 const shelf: Figure = {
   src: "/standard-shelf.png",
-  alt: "A dust-free shelf edge meeting the wall in a single clean line, warm light across the surface.",
+  alt: "A cleaner in mustard gloves wiping the narrow corner where a warm white wall meets a natural wood baseboard.",
   caption: "Corners and edges.",
 };
 
