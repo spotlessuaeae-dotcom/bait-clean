@@ -104,7 +104,7 @@ export function ContactHero() {
             <p className="text-sm leading-tight text-foreground">
               <span className="block font-serif text-base">Someone real, at your door</span>
               <span className="text-muted-foreground">
-                usually within the hour
+                {siteConfig.operatingHours}
               </span>
             </p>
           </div>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import { ArrowRightIcon, ArrowUpRightIcon } from "lucide-react";
 
-import { whatsappHref } from "@/lib/site";
+import { siteConfig, whatsappHref } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -84,8 +84,8 @@ export function ClosingCTA() {
             </div>
 
             <p className="mt-6 text-sm leading-relaxed text-primary-foreground/55">
-              We usually reply within the hour — WhatsApp or a call, whichever&apos;s
-              easier for you.
+              We&apos;re available {siteConfig.operatingHours} — WhatsApp or a call,
+              whichever&apos;s easier for you.
             </p>
           </div>
 

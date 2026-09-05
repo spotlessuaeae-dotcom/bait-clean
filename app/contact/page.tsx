@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
 
+import { siteConfig } from "@/lib/site";
 import { ContactHero } from "@/components/contact-hero";
 import { ContactForm } from "@/components/contact-form";
 import { ContactInfo } from "@/components/contact-info";
 
 export const metadata: Metadata = {
   title: "Contact Bait Clean — Book Home Cleaning in Sharjah & Ajman",
-  description:
-    "Request a free quote for home, deep, or office cleaning in Sharjah and Ajman. Send your details and we'll reply on WhatsApp, usually within the hour.",
+  description: `Request a free quote for home, deep, or office cleaning in Sharjah and Ajman. Call ${siteConfig.phoneNumber} or send your details on WhatsApp during ${siteConfig.operatingHours}.`,
   openGraph: {
     title: "Contact Bait Clean — Book Home Cleaning in Sharjah & Ajman",
-    description:
-      "Request a free quote and we'll reply on WhatsApp, usually within the hour.",
+    description: `Request a free quote and reach us on WhatsApp during ${siteConfig.operatingHours}.`,
     type: "website",
   },
 };

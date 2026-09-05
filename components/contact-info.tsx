@@ -10,7 +10,7 @@ const details = [
   {
     icon: PhoneIcon,
     label: "Phone",
-    value: "+971 X XXX XXXX",
+    value: siteConfig.phoneNumber,
   },
   {
     icon: MailIcon,
@@ -25,7 +25,7 @@ const details = [
   {
     icon: ClockIcon,
     label: "Hours",
-    value: "Sat–Thu, usually reply within the hour",
+    value: siteConfig.operatingHours,
   },
 ];
 
@@ -39,8 +39,7 @@ export function ContactInfo() {
         Prefer to talk now?
       </h2>
       <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground text-pretty">
-        WhatsApp is the fastest way to reach us — most quotes go out within
-        the hour.
+        WhatsApp is the fastest way to reach us during {siteConfig.operatingHours}.
       </p>
 
       <Button
