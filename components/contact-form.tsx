@@ -55,6 +55,13 @@ const initialState: FormState = {
 
 type FormErrors = Partial<Record<keyof FormState, string>>;
 
+function isPlausiblePhone(value: string) {
+  // Loose check: strips common separators, then wants 7-15 digits.
+  // Catches "n/a", "-", typos — not a full phone-format validator.
+  const digitsOnly = value.trim().replace(/[\s().-]/g, "");
+  return /^\+?\d{7,15}$/.test(digitsOnly);
+}
+
 export function ContactForm() {
   const [values, setValues] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<FormErrors>({});
@@ -70,7 +77,11 @@ export function ContactForm() {
 
     const nextErrors: FormErrors = {};
     if (!values.name.trim()) nextErrors.name = "Tell us your name.";
-    if (!values.phone.trim()) nextErrors.phone = "We need a number to reach you on.";
+    if (!values.phone.trim()) {
+      nextErrors.phone = "We need a number to reach you on.";
+    } else if (!isPlausiblePhone(values.phone)) {
+      nextErrors.phone = "That doesn't look like a valid phone number.";
+    }
     if (!values.service) nextErrors.service = "Choose the service you need.";
     if (!values.area) nextErrors.area = "Let us know which city.";
 
