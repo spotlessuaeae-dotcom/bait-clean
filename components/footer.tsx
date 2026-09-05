@@ -95,10 +95,10 @@ export function Footer() {
                     Message on WhatsApp
                   </Link>
                 </li>
-                <li className="text-sm text-background/70">[+971 X XXX XXXX]</li>
+                <li className="text-sm text-background/70">{siteConfig.phoneNumber}</li>
                 <li className="text-sm text-background/70">[hello@baitclean.com]</li>
                 <li className="text-sm text-background/50">
-                  Sat–Thu, usually reply within the hour
+                  {siteConfig.operatingHours}
                 </li>
               </ul>
             </nav>

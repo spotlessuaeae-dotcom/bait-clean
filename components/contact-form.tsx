@@ -216,7 +216,7 @@ export function ContactForm() {
             className="min-h-28"
           />
           <FieldDescription>
-            We&apos;ll reply on WhatsApp, usually within the hour.
+            We&apos;re available on WhatsApp {siteConfig.operatingHours}.
           </FieldDescription>
         </Field>
 

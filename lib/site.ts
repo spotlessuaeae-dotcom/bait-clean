@@ -1,8 +1,9 @@
 export const siteConfig = {
   name: "Bait Clean",
   serviceArea: "Sharjah · Ajman",
-  // Placeholder — swap for the real business WhatsApp number (international format, no +).
-  whatsappNumber: "971500000000",
+  phoneNumber: "+971 58 124 9910",
+  whatsappNumber: "971581249910",
+  operatingHours: "Monday–Saturday, 8:00 AM – 4:00 PM",
   whatsappMessage: "Hello Bait Clean, I'd like to request a quote for home cleaning.",
 } as const;
 
