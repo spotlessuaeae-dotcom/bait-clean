@@ -1,18 +1,17 @@
+// components/footer.tsx
 import Link from "next/link";
 import { MapPinIcon } from "lucide-react";
 
 import { navLinks, siteConfig, whatsappHref } from "@/lib/site";
+import { serviceCategories } from "@/lib/services-data";
 import { Logo } from "@/components/logo";
 import { WhatsAppIcon } from "@/components/icons";
 import { BackToTop } from "@/components/back-to-top";
 
-const serviceLinks = [
-  { label: "Home & Villa Cleaning", href: "/services" },
-  { label: "Deep & Detail Cleaning", href: "/services" },
-  { label: "Maid Services", href: "/services" },
-  { label: "Laundry & Fabric Care", href: "/services" },
-  { label: "Office Cleaning", href: "/services" },
-];
+const serviceLinks = serviceCategories.map(({ slug, name }) => ({
+  label: name,
+  href: `/services#${slug}`,
+}));
 
 const legalLinks = [
   { label: "Privacy Policy", href: "/privacy" },
@@ -71,7 +70,7 @@ export function Footer() {
               </h3>
               <ul className="mt-5 flex flex-col gap-3">
                 {serviceLinks.map((link) => (
-                  <li key={link.label}>
+                  <li key={link.href}>
                     <Link href={link.href} className={linkClass}>
                       {link.label}
                     </Link>
