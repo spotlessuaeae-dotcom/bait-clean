@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "motion/react";
 import { MenuIcon, MapPinIcon } from "lucide-react";
 
@@ -24,6 +25,10 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const reduceMotion = useReducedMotion();
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -65,16 +70,31 @@ export function Header() {
           {/* Center: primary nav */}
           <nav aria-label="Primary" className="hidden lg:block">
             <ul className="flex items-center gap-1">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="relative rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const active = isActive(link.href);
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      aria-current={active ? "page" : undefined}
+                      className={cn(
+                        "relative rounded-md px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                        active
+                          ? "text-foreground"
+                          : "text-muted-foreground hover:text-foreground",
+                      )}
+                    >
+                      {link.label}
+                      {active && (
+                        <span
+                          className="absolute inset-x-3 -bottom-px h-px bg-brass"
+                          aria-hidden="true"
+                        />
+                      )}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 
@@ -139,19 +159,26 @@ export function Header() {
                 </SheetHeader>
 
                 <nav aria-label="Mobile" className="flex flex-col p-3">
-                  {navLinks.map((link) => (
-                    <SheetClose
-                      key={link.href}
-                      render={
-                        <Link
-                          href={link.href}
-                          className="rounded-lg px-3 py-3 font-serif text-2xl text-foreground transition-colors hover:text-primary"
-                        />
-                      }
-                    >
-                      {link.label}
-                    </SheetClose>
-                  ))}
+                  {navLinks.map((link) => {
+                    const active = isActive(link.href);
+                    return (
+                      <SheetClose
+                        key={link.href}
+                        render={
+                          <Link
+                            href={link.href}
+                            aria-current={active ? "page" : undefined}
+                            className={cn(
+                              "rounded-lg px-3 py-3 font-serif text-2xl transition-colors hover:text-primary",
+                              active ? "text-primary" : "text-foreground",
+                            )}
+                          />
+                        }
+                      >
+                        {link.label}
+                      </SheetClose>
+                    );
+                  })}
                 </nav>
 
                 <div className="mt-auto flex flex-col gap-3 border-t p-5">
