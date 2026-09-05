@@ -32,7 +32,7 @@ export const serviceCategories: ServiceCategory[] = [
     ],
     image: {
       src: "/services-home-villa.png",
-      alt: "A Bait Clean housekeeper wiping down a wooden console table in a sunlit villa living room.",
+      alt: "Two professional cleaners in blue uniforms and yellow gloves standing in a bright modern home.",
     },
   },
   {
@@ -52,7 +52,7 @@ export const serviceCategories: ServiceCategory[] = [
     ],
     image: {
       src: "/services-deep-detail.png",
-      alt: "Gloved hands deep-cleaning a marble kitchen countertop and brass sink with a microfiber cloth.",
+      alt: "A professional cleaner in yellow gloves wiping a bright modern kitchen cabinet.",
     },
     secondaryImage: {
       src: "/standard-grout.png",
@@ -76,7 +76,7 @@ export const serviceCategories: ServiceCategory[] = [
     ],
     image: {
       src: "/services-maid.png",
-      alt: "A Bait Clean housekeeper straightening cushions on a sofa in a lived-in living room.",
+      alt: "A professional housekeeper making a bed in a bright modern apartment bedroom.",
     },
   },
   {
@@ -96,7 +96,7 @@ export const serviceCategories: ServiceCategory[] = [
     ],
     image: {
       src: "/services-laundry.png",
-      alt: "Hands ironing a cream linen garment on a padded ironing board with soft steam rising.",
+      alt: "A professional cleaner ironing a crisp white shirt on a clean ironing board.",
     },
     secondaryImage: {
       src: "/standard-linen.png",
@@ -120,7 +120,7 @@ export const serviceCategories: ServiceCategory[] = [
     ],
     image: {
       src: "/services-office.png",
-      alt: "A Bait Clean staff member wiping down a wooden office desk in a warmly lit workspace.",
+      alt: "A professional cleaner in a blue uniform wiping a modern office desk beside a computer.",
     },
   },
 ];
