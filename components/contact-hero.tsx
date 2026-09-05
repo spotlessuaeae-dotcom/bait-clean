@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import { ArrowUpRightIcon } from "lucide-react";
@@ -28,12 +29,12 @@ export function ContactHero() {
 
   return (
     <section className="relative overflow-hidden border-b border-border/70" aria-labelledby="contact-hero-heading">
-      <div className="mx-auto w-full max-w-7xl px-5 pt-14 pb-12 sm:px-8 lg:pt-20 lg:pb-16">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-y-10 px-5 pt-14 pb-12 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-x-16 lg:pt-20 lg:pb-16">
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="max-w-2xl"
+          className="relative z-10 max-w-2xl"
         >
           <motion.div variants={item} className="mb-7 flex items-center gap-3">
             <span className="h-px w-8 bg-brass" aria-hidden="true" />
@@ -74,6 +75,39 @@ export function ContactHero() {
               />
             </Link>
           </motion.div>
+        </motion.div>
+
+        {/* Right: documentary hand-off moment */}
+        <motion.div
+          initial={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 1.04 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
+          className="relative w-full lg:-mr-8"
+        >
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl sm:aspect-[5/4] lg:aspect-[4/5]">
+            <Image
+              src="/contact-hero-handoff.png"
+              alt="A Bait Clean staff member greeting a client at the front door mid hand-off, warm and unposed."
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 48vw"
+              className="object-cover"
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-foreground/25 via-transparent to-transparent"
+              aria-hidden="true"
+            />
+          </div>
+
+          <div className="absolute bottom-5 left-5 flex items-center gap-3 rounded-xl border border-border/60 bg-background/90 px-4 py-3 supports-backdrop-filter:bg-background/75">
+            <span className="h-8 w-px bg-brass" aria-hidden="true" />
+            <p className="text-sm leading-tight text-foreground">
+              <span className="block font-serif text-base">Someone real, at your door</span>
+              <span className="text-muted-foreground">
+                usually within the hour
+              </span>
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -113,11 +113,11 @@ export function Footer() {
           </p>
 
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            {legalLinks.map((link) => (
+            {/* {legalLinks.map((link) => (
               <Link key={link.href} href={link.href} className={linkClass}>
                 {link.label}
               </Link>
-            ))}
+            ))} */}
             <BackToTop />
           </div>
         </div>
