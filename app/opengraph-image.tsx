@@ -148,7 +148,7 @@ export default async function Image() {
                 color: "rgba(245, 242, 234, 0.75)",
               }}
             >
-              +971 58 124 9910
++971543635593
             </span>
           </div>
         </div>

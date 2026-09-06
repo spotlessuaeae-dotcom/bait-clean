@@ -10,7 +10,7 @@ export function FixedContactFab() {
       className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom))] right-[calc(1.25rem+env(safe-area-inset-right))] z-50 flex flex-col gap-3"
     >
       <a
-        href="tel:+971581249910"
+        href="tel:+971543635593"
         aria-label="Call Bait Clean"
         className="flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_8px_24px_rgba(37,35,31,0.2)] transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       >
