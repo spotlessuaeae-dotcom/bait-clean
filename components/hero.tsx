@@ -113,8 +113,8 @@ export function Hero() {
         >
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl sm:aspect-[5/4] lg:aspect-[4/5]">
             <Image
-              src="/hero-cleaning-caddy.png"
-              alt="A professional cleaning caddy arranged with supplies on a bright kitchen counter."
+              src="/hero-interior.png"
+              alt="A professional cleaner in a blue uniform and yellow gloves smoothing crisp white bedsheets in a sunlit bedroom."
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 48vw"
