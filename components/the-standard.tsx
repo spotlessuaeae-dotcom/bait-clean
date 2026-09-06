@@ -20,8 +20,8 @@ type Figure = {
 };
 
 const anchor: Figure = {
-  src: "/standard-linen.png",
-  alt: "Yellow-gloved hands folding freshly pressed white linen in soft daylight.",
+  src: "/standard-direction-edge.png",
+  alt: "Earth-toned gloved hands carefully brushing dust from a wooden window track in warm daylight.",
 };
 
 const windowTrack: Figure = {
@@ -37,8 +37,8 @@ const grout: Figure = {
 };
 
 const shelf: Figure = {
-  src: "/standard-shelf.png",
-  alt: "A cleaner in mustard gloves wiping the narrow corner where a warm white wall meets a natural wood baseboard.",
+  src: "/standard-corners-brass.png",
+  alt: "A close architectural detail of warm brass trim meeting a pale stone corner with precise, clean lines.",
   caption: "Corners and edges.",
 };
 
@@ -145,6 +145,7 @@ export function TheStandard() {
             variants={figureVariants}
             drift={reduceMotion ? zero : driftSlow}
             sizes="(min-width: 1024px) 30vw, 100vw"
+            objectPosition="center bottom"
           />
         </div>
       </div>
@@ -161,6 +162,7 @@ function DriftFigure({
   aspect,
   sizes,
   priority,
+  objectPosition,
 }: {
   figure: Figure;
   index: number;
@@ -170,6 +172,7 @@ function DriftFigure({
   aspect: string;
   sizes: string;
   priority?: boolean;
+  objectPosition?: string;
 }) {
   return (
     <motion.figure style={{ y: drift }} className={className}>
@@ -188,6 +191,7 @@ function DriftFigure({
           sizes={sizes}
           priority={priority}
           className="object-cover"
+          style={{ objectPosition }}
         />
       </motion.div>
       {figure.caption ? (
