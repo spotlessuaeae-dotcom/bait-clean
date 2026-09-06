@@ -8,9 +8,25 @@ import { ClosingCTA } from "@/components/closing-cta";
 import { serviceCategories } from "@/lib/services-data";
 
 export const metadata: Metadata = {
-  title: "Services | Bait Clean",
+  title: "Cleaning Services in Sharjah & Ajman",
   description:
-    "Home & villa cleaning, deep & detail cleaning, maid services, laundry & fabric care, and office cleaning across Sharjah and Ajman — see exactly what's included in each.",
+    "Explore our 5 core services across Sharjah and Ajman: home and villa cleaning, deep detailing, dedicated maid service, laundry fabric care, and office cleaning.",
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Cleaning Services in Sharjah & Ajman | Bait Clean",
+    description:
+      "Home & villa cleaning, deep detail, maid service, fabric care, and office cleaning across Sharjah and Ajman — see what's included in every visit.",
+    url: "/services",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cleaning Services in Sharjah & Ajman | Bait Clean",
+    description:
+      "Home & villa cleaning, deep detail, maid service, fabric care, and office cleaning across Sharjah and Ajman — see what's included in every visit.",
+  },
 };
 
 export default function ServicesPage() {

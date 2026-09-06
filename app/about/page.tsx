@@ -6,14 +6,24 @@ import { AboutValues } from "@/components/about-values";
 import { ClosingCTA } from "@/components/closing-cta";
 
 export const metadata: Metadata = {
-  title: "About Bait Clean — Vetted, Insured Home Cleaning in Sharjah & Ajman",
+  title: "About Our Cleaning Standard",
   description:
-    "Bait Clean directly employs, background-checks, and trains every cleaner before they set foot in your home. Learn why we started and what we won't compromise on.",
+    "Learn how Bait Clean brings thoughtful standards, direct employment, and background-checked housekeepers to homes and private villas across Sharjah and Ajman.",
+  alternates: {
+    canonical: "/about",
+  },
   openGraph: {
-    title: "About Bait Clean — Vetted, Insured Home Cleaning in Sharjah & Ajman",
+    title: "About Our Cleaning Standard | Bait Clean",
     description:
-      "Why Bait Clean started, and the standard we hold ourselves to on every visit across Sharjah and Ajman.",
+      "Direct employment, thorough vetting, and an uncompromising standard of home care across Sharjah and Ajman.",
+    url: "/about",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Our Cleaning Standard | Bait Clean",
+    description:
+      "Direct employment, thorough vetting, and an uncompromising standard of home care across Sharjah and Ajman.",
   },
 };
 

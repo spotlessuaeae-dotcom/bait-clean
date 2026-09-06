@@ -15,7 +15,7 @@ const details = [
   {
     icon: MailIcon,
     label: "Email",
-    value: "hello@baitclean.com",
+    value: siteConfig.email,
   },
   {
     icon: MapPinIcon,

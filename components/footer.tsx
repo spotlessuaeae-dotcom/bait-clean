@@ -13,10 +13,10 @@ const serviceLinks = serviceCategories.map(({ slug, name }) => ({
   href: `/services#${slug}`,
 }));
 
-const legalLinks = [
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Service", href: "/terms" },
-];
+// const legalLinks = [
+//   { label: "Privacy Policy", href: "/privacy" },
+//   { label: "Terms of Service", href: "/terms" },
+// ];
 
 const linkClass =
   "text-sm text-background/70 transition-colors hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-foreground rounded-sm";
@@ -96,7 +96,7 @@ export function Footer() {
                   </Link>
                 </li>
                 <li className="text-sm text-background/70">{siteConfig.phoneNumber}</li>
-                <li className="text-sm text-background/70">[hello@baitclean.com]</li>
+                <li className="text-sm text-background/70">{siteConfig.email}</li>
                 <li className="text-sm text-background/50">
                   {siteConfig.operatingHours}
                 </li>
