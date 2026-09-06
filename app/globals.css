@@ -168,3 +168,26 @@
     opacity: 0.45;
   }
 }
+
+
+.wa-ripple {
+  position: relative;
+}
+
+.wa-ripple::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  animation: wa-ripple-ring 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes wa-ripple-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgb(37 211 102 / 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 18px rgb(37 211 102 / 0);
+  }
+}
