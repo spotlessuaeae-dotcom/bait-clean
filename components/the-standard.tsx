@@ -37,8 +37,8 @@ const grout: Figure = {
 };
 
 const shelf: Figure = {
-  src: "/standard-shelf.png",
-  alt: "A cleaner in mustard gloves wiping the narrow corner where a warm white wall meets a natural wood baseboard.",
+  src: "/standard-corners-brass.png",
+  alt: "A close architectural detail of warm brass trim meeting a pale stone corner with precise, clean lines.",
   caption: "Corners and edges.",
 };
 
