@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { FixedContactFab } from "@/components/fixed-contact-fab";
 import { SmoothScroll } from "@/components/smooth-scroll";
 
 const fraunces = Fraunces({
@@ -44,6 +45,7 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: dark)", color: "#25231f" },
   ],
   colorScheme: "light dark",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -55,8 +57,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col font-sans">
         <SmoothScroll />
         <Header />
-        {children}
+        <div className="flex-1">
+          {children}
+        </div>
         <Footer />
+        <FixedContactFab />
       </body>
     </html>
   );
