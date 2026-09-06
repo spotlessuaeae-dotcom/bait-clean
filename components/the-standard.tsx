@@ -145,6 +145,7 @@ export function TheStandard() {
             variants={figureVariants}
             drift={reduceMotion ? zero : driftSlow}
             sizes="(min-width: 1024px) 30vw, 100vw"
+            objectPosition="center bottom"
           />
         </div>
       </div>
@@ -161,6 +162,7 @@ function DriftFigure({
   aspect,
   sizes,
   priority,
+  objectPosition,
 }: {
   figure: Figure;
   index: number;
@@ -170,6 +172,7 @@ function DriftFigure({
   aspect: string;
   sizes: string;
   priority?: boolean;
+  objectPosition?: string;
 }) {
   return (
     <motion.figure style={{ y: drift }} className={className}>
@@ -188,6 +191,7 @@ function DriftFigure({
           sizes={sizes}
           priority={priority}
           className="object-cover"
+          style={{ objectPosition }}
         />
       </motion.div>
       {figure.caption ? (
