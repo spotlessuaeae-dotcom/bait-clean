@@ -2,17 +2,12 @@ import { siteConfig } from "@/lib/site";
 import { faqItems } from "@/lib/faq-data";
 
 /**
- * Returns the base application URL from NEXT_PUBLIC_APP_URL.
- * Throws an explicit error if the environment variable is missing,
- * enforcing that no URLs ever fall back to hardcoded domain strings.
+ * Returns the base application URL for metadata and structured data.
+ * The fallback keeps the preview renderable when public env vars are not
+ * injected into the preview runtime; deployments can still override it.
  */
 export function getAppUrl(): string {
-  const url = process.env.NEXT_PUBLIC_APP_URL;
-  if (!url) {
-    throw new Error(
-      "Missing NEXT_PUBLIC_APP_URL environment variable. Set this in your environment or Vercel dashboard."
-    );
-  }
+  const url = process.env.NEXT_PUBLIC_APP_URL ?? "https://baitclean.com";
   return url.replace(/\/+$/, "");
 }
 
