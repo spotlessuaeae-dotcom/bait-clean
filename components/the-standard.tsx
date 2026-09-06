@@ -20,8 +20,8 @@ type Figure = {
 };
 
 const anchor: Figure = {
-  src: "/standard-linen.png",
-  alt: "Yellow-gloved hands folding freshly pressed white linen in soft daylight.",
+  src: "/standard-detail-brass.png",
+  alt: "Earth-toned gloved hands carefully brushing dust from a wooden window track in warm daylight.",
 };
 
 const windowTrack: Figure = {
