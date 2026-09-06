@@ -20,7 +20,7 @@ type Figure = {
 };
 
 const anchor: Figure = {
-  src: "/standard-detail-brass.png",
+  src: "/standard-direction-edge.png",
   alt: "Earth-toned gloved hands carefully brushing dust from a wooden window track in warm daylight.",
 };
 
