@@ -94,8 +94,8 @@ export function ClosingCTA() {
             <figure className="relative">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl lg:-mr-8">
                 <Image
-                  src="/closing-finished-room.png"
-                  alt="A beautifully finished bright bedroom with a perfectly made bed and fresh linens."
+                  src="/closing-housekeeper.png"
+                  alt="Bait Clean housekeeper packing away supplies after finishing a home cleaning visit in Sharjah."
                   fill
                   sizes="(max-width: 1024px) 100vw, 34vw"
                   className="object-cover"
