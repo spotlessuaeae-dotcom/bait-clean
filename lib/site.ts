@@ -4,7 +4,7 @@ export const siteConfig = {
   phoneNumber: "+971543635593",
   whatsappNumber: "971543635593",
   operatingHours: "Monday–Saturday, 8:00 AM – 4:00 PM",
-  email: `hello@${["baitclean", "com"].join(".")}`,
+  email: "baitclean.uae@gmail.com",
   whatsappMessage: "Hello Bait Clean, I'd like to request a quote for home cleaning.",
 } as const;
 
